@@ -21,14 +21,19 @@
 
 //######### using ternary operator ###########
 
-function spinWords(words) {
-    return words.split(" ").map(word => {
-        return (word.length > 4) ? word.split("").reverse().join("") : word
-    }).join(" ")
-}
-
-console.log(spinWords("Hey fellow warriors"))
+// function spinWords(words) {
+//     return words.split(" ").map(word => {
+//         return (word.length > 4) ? word.split("").reverse().join("") : word
+//     }).join(" ")
+// }
+//
+// console.log(spinWords("Hey fellow warriors"))
 
 
 //######### using regEx ###########
 
+function spinWords(words) {
+    return words.replace(/\w{5,}/g, x => { return x.split("").reverse().join("") })
+}
+
+console.log(spinWords("Hey fellow warriors"))
