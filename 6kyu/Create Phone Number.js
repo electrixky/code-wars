@@ -4,30 +4,41 @@
 // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
 
 // ########## initial solution ################
-const isInTheRange = (currentValue) => currentValue >= 0 && currentValue < 10;
-
-function createPhoneNumber(numbers) {
-    if (numbers.length === 10 && numbers.every(isInTheRange)) {
-        let firstPart = numbers.slice(0, 3).join('');
-        let secondPart = numbers.slice(3, 6).join('');
-        let thirdPart = numbers.slice(6).join('');
-        return `(${firstPart}) ${secondPart}-${thirdPart}`;
-    }
-    return "Invalid input";
-}
-
-console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+// const isInTheRange = (currentValue) => currentValue >= 0 && currentValue < 10;
+//
+// function createPhoneNumber(numbers) {
+//     if (numbers.length === 10 && numbers.every(isInTheRange)) {
+//         let firstPart = numbers.slice(0, 3).join('');
+//         let secondPart = numbers.slice(3, 6).join('');
+//         let thirdPart = numbers.slice(6).join('');
+//         return `(${firstPart}) ${secondPart}-${thirdPart}`;
+//     }
+//     return "Invalid input";
+// }
+//
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
 
 // ########### using replace() ##################
-function createPhoneNumber(numbers) {
-    if(numbers.length === 10 && numbers.every(num => num >= 0 && num <10)) {
-        let format = "(xxx) xxx-xxxx"
+// function createPhoneNumber(numbers) {
+//     if(numbers.length === 10 && numbers.every(num => num >= 0 && num <10)) {
+//         let format = "(xxx) xxx-xxxx"
+//
+//         let index = 0
+//         return format.replace(/x/g, () => numbers[index++])
+//     }
+//     return "Invalid value"
+// }
+//
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
-        let index = 0
-        return format.replace(/x/g, () => numbers[index++])
-    }
-    return "Invalid value"
+
+// ########## using substring ###################
+
+function createPhoneNumber(numbers) {
+    let numberString = numbers.join("")
+
+    return "(" + numberString.substring(0, 3) + ") " + numberString.substring(3, 6) + "-" + numberString.substring(6)
 }
 
 console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
