@@ -24,3 +24,12 @@ function duplicateCount(text){
 }
 
 console.log(duplicateCount("Indivisibilities"))
+
+// ####### using regEx #########
+
+function duplicateCount(text){
+    return (text.toLowerCase().split("").sort().join("").match(/([^])\1+/g) || []).length
+}
+
+console.log(duplicateCount("Indivisibilities"))
+
