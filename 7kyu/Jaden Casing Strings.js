@@ -3,27 +3,27 @@
 // Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
 
 // ####### initial solution #######
-// function toJadenCase(string) {
-//     const words = string.split(" ")
-//     for (let i = 0; i < words.length; i++) {
-//         words[i] = words[i][0].toUpperCase() + words[i].substring(1)
-//     }
-//     return words.join(" ")
-// }
-//
-// console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
+function toJadenCase(string) {
+    const words = string.split(" ")
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].substring(1)
+    }
+    return words.join(" ")
+}
+
+console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
 
 // ####### using map #######
 
-// function toJadenCase(string) {
-//     const words = string.split(" ")
-//
-//     return words.map(word => {
-//         return word[0].toUpperCase() + word.substring(1)
-//     }).join(" ")
-// }
-//
-// console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
+function toJadenCase(string) {
+    const words = string.split(" ")
+
+    return words.map(word => {
+        return word[0].toUpperCase() + word.substring(1)
+    }).join(" ")
+}
+
+console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
 
 // ###### using regEx ########
 
