@@ -15,12 +15,20 @@
 
 // ####### using map #######
 
-function toJadenCase(string) {
-    const words = string.split(" ")
+// function toJadenCase(string) {
+//     const words = string.split(" ")
+//
+//     return words.map(word => {
+//         return word[0].toUpperCase() + word.substring(1)
+//     }).join(" ")
+// }
+//
+// console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
 
-    return words.map(word => {
-        return word[0].toUpperCase() + word.substring(1)
-    }).join(" ")
+// ###### using regEx ########
+
+function toJadenCase(string) {
+    return string.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())
 }
 
 console.log(toJadenCase("How can mirrors be real if our eyes aren't real"))
