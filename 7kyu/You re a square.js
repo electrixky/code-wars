@@ -1,6 +1,6 @@
 // Given an integral number, determine if it's a square number:
 
-######## initial solution ########
+// ######## initial solution ########
 var isSquare = function(n){
     return Number.isInteger(Math.sqrt(n))
 }
@@ -14,3 +14,15 @@ var isSquare = function(n){
 }
 
 console.log(isSquare(25))
+
+// ####### checking integers #########
+var isSquare = function(n) {
+    for (let i = 0; i * i <= n; i++) {
+        if (i*i === n) {
+            return true
+        }
+    }
+    return false
+}
+
+console.log(isSquare(23))
