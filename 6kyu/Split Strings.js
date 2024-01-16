@@ -1,5 +1,6 @@
 //Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
-// ###### initial solution ##########
+
+//###### initial solution ##########
 function solution(str) {
     let newArr = []
 
@@ -11,6 +12,14 @@ function solution(str) {
     }
     return newArr
 
+}
+
+console.log(solution("abcdefg"))
+console.log(solution(""))
+
+//###### using regEx ########
+function solution(str) {
+    return (str+"_").match(/.{2}/g)||[]
 }
 
 console.log(solution("abcdefg"))
