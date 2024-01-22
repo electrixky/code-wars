@@ -13,3 +13,10 @@ function getCount(str) {
 }
 
 console.log(getCount("abracadabra"))
+
+//###### using regEx ##########
+function getCount(str) {
+    return (str.match(/[aeiou]/ig)||[]).length
+}
+
+console.log(getCount("abracadabra"))
