@@ -20,3 +20,10 @@ function getCount(str) {
 }
 
 console.log(getCount("abracadabra"))
+
+//###### using filter() ########
+function getCount(str) {
+    return str.split("").filter(x => "aeiouAEIOU".includes(x)).length
+}
+
+console.log(getCount("abracadabra"))
