@@ -8,3 +8,11 @@ function squareDigits(num){
 }
 
 console.log(squareDigits(9119))
+
+//##### using map ######
+
+function squareDigits(num){
+    return num.toString().split('').map(i => i*i).join('')
+}
+
+console.log(squareDigits(9119))
