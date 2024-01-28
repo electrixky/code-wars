@@ -2,20 +2,20 @@
 
 //#### initial solution #####
 
-// function factorial(n) {
-//     if (n >= 0 && n <= 12) {
-//         let factorial = 1
-//         for (let i = n; i > 0; i--) {
-//             factorial *= i
-//         }
-//
-//         return factorial
-//     } else {
-//         throw new RangeError("Out of range");
-//     }
-// }
-//
-// console.log(factorial(5))
+function factorial(n) {
+    if (n >= 0 && n <= 12) {
+        let factorial = 1
+        for (let i = n; i > 0; i--) {
+            factorial *= i
+        }
+
+        return factorial
+    } else {
+        throw new RangeError("Out of range");
+    }
+}
+
+console.log(factorial(5))
 
 
 //##### recursion ######
@@ -24,6 +24,20 @@ function factorial(n) {
     if (n < 0 || n > 12)
         throw new RangeError()
     return n <= 1 ? 1 : n * factorial(n-1)
+}
+
+console.log(factorial(5))
+
+//#### while loop #####
+
+function factorial(n) {
+    if (n < 0 || n > 12)
+        throw new RangeError()
+    let factorial = 1
+    while (n > 1) {
+        factorial *= n--
+    }
+    return factorial
 }
 
 console.log(factorial(5))
