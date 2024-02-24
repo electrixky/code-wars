@@ -13,8 +13,19 @@
 // console.log(yearDays(300))
 
 //#### solution 2 ######
+// function yearDays(year) {
+//     return year + " has " + (!(year % 100) && year % 400 || year % 4 ? "365" : "366") + " days"
+// }
+//
+// console.log(yearDays(-400))
+
+//##### using ternary #####
+
 function yearDays(year) {
-    return year + " has " + (!(year % 100) && year % 400 || year % 4 ? "365" : "366") + " days"
+    let nDays = year % 4 ? 365 :
+                        year % 100 ? 366 :
+                        year % 400 ? 365 : 366
+    return `${year} has ${nDays} days`
 }
 
-console.log(yearDays(-400))
+console.log(yearDays(2000))
